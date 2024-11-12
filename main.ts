@@ -20,6 +20,7 @@ function Line_patrol () {
     }
 }
 maqueenPlusV2.I2CInit()
+let ultsoud = maqueenPlusV2.readUltrasonic(DigitalPin.P13, DigitalPin.P14)
 basic.forever(function () {
     while (maqueenPlusV2.readLineSensorState(maqueenPlusV2.MyEnumLineSensor.SensorL1) == 0 || (maqueenPlusV2.readLineSensorState(maqueenPlusV2.MyEnumLineSensor.SensorM) == 0 || maqueenPlusV2.readLineSensorState(maqueenPlusV2.MyEnumLineSensor.SensorR1) == 0)) {
         Line_patrol()
