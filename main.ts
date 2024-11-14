@@ -7,6 +7,9 @@ function init () {
         basic.pause(100)
     }
     maqueenPlusV2.ledBlank()
+    maqueenPlusV2.controlLED(maqueenPlusV2.MyEnumLed.LeftLed, maqueenPlusV2.MyEnumSwitch.Open)
+    maqueenPlusV2.controlLED(maqueenPlusV2.MyEnumLed.RightLed, maqueenPlusV2.MyEnumSwitch.Open)
+    maqueenPlusV2.setBrightness(255)
 }
 init()
 basic.forever(function () {
@@ -49,7 +52,7 @@ basic.forever(function () {
             led.toggle(1, 2)
         }
     }
-    while (maqueenPlusV2.readUltrasonic(DigitalPin.P13, DigitalPin.P14) < 5) {
+    while (maqueenPlusV2.readUltrasonic(DigitalPin.P13, DigitalPin.P14) < 6) {
         maqueenPlusV2.controlMotorStop(maqueenPlusV2.MyEnumMotor.AllMotor)
     }
 })
