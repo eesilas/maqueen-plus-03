@@ -7,9 +7,7 @@ function init () {
         basic.pause(100)
     }
     maqueenPlusV2.ledBlank()
-    ultsoud = maqueenPlusV2.readUltrasonic(DigitalPin.P13, DigitalPin.P14)
 }
-let ultsoud = 0
 init()
 basic.forever(function () {
     while (maqueenPlusV2.readLineSensorState(maqueenPlusV2.MyEnumLineSensor.SensorL1) == 0 || (maqueenPlusV2.readLineSensorState(maqueenPlusV2.MyEnumLineSensor.SensorM) == 0 || maqueenPlusV2.readLineSensorState(maqueenPlusV2.MyEnumLineSensor.SensorR1) == 0)) {
@@ -51,7 +49,7 @@ basic.forever(function () {
             led.toggle(1, 2)
         }
     }
-    while (ultsoud < 3) {
+    while (maqueenPlusV2.readUltrasonic(DigitalPin.P13, DigitalPin.P14) < 5) {
         maqueenPlusV2.controlMotorStop(maqueenPlusV2.MyEnumMotor.AllMotor)
     }
 })
