@@ -1,5 +1,4 @@
 function init () {
-    basic.showIcon(IconNames.Butterfly)
     maqueenPlusV2.I2CInit()
     maqueenPlusV2.controlMotorStop(maqueenPlusV2.MyEnumMotor.AllMotor)
     for (let index = 0; index <= 3; index++) {
@@ -10,6 +9,7 @@ function init () {
     maqueenPlusV2.controlLED(maqueenPlusV2.MyEnumLed.LeftLed, maqueenPlusV2.MyEnumSwitch.Open)
     maqueenPlusV2.controlLED(maqueenPlusV2.MyEnumLed.RightLed, maqueenPlusV2.MyEnumSwitch.Open)
     maqueenPlusV2.setBrightness(255)
+    basic.showIcon(IconNames.Butterfly)
 }
 init()
 basic.forever(function () {
